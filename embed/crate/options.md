@@ -1,10 +1,17 @@
 # Crate Options
 
-You can pass custom options to Crate when initializing it, for example:
+You can customize Crate when initializing it. In the example below `location: ['top', 'left']` was added:
 
 ```ts
 new Crate({ server: '299881420891881473', location: ['top', 'left'] })
 ```
+
+This will change Crate's default location from bottom right on the page to top left. To find out more, about location options, see the relevant section in [Definitions](##Definitions). 
+
+> [!IMPORTANT]
+> You must include a comma `,` after each complete option except the last one, and remove the question mark `?` when customizing.
+
+Below are some options that Crate supports with more in-depth explanations further below. 
 
 ## Definitions
 
@@ -68,3 +75,14 @@ interface Options {
 
 export default Options
 ```
+## Explanations
+### Server + channel IDs
+This option displays the default channel when opening the Widgetbot Crate. Crate's server string has to be the server ID of the channel you want displayed. To learn how to find server and channel IDs, check out the [html-embed tutorial](https://docs.widgetbot.io/embed/html-embed/tutorial#html-embed-tutorial). 
+
+### Thread ID
+To make a specific thread be the default, add `thread: 'ID String'` to Crate option. Finding the thread ID will be the same steps as finding the server and channel IDs. 
+
+### Color
+By default, Crate will use Discord's official colors. Add `color: 'string'` and replace `string` with either a RGBA or Hex color code. 
+
+Transparency is supported.
